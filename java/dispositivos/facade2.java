@@ -11,7 +11,6 @@ class Luces {
     }
 }
 
-// Clase para el control del aire acondicionado
 class AireAcondicionado {
     public void encender() {
         System.out.println("❄️ Aire acondicionado encendido");
@@ -22,7 +21,6 @@ class AireAcondicionado {
     }
 }
 
-// Clase para el control de la alarma
 class Alarma {
     public void activar() {
         System.out.println("🚨 Alarma de emergencia activada");
@@ -33,7 +31,6 @@ class Alarma {
     }
 }
 
-// Clase principal para manejar el hospital inteligente
 class HospitalInteligente {
     private Luces luces;
     private AireAcondicionado aire;
@@ -60,7 +57,6 @@ class HospitalInteligente {
     }
 }
 
-// Simulación del sistema en un hospital
 public class facade2 {
     public static void main(String[] args) {
         HospitalInteligente hospital = new HospitalInteligente();

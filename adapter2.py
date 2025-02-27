@@ -1,7 +1,6 @@
 import json
 import xml.etree.ElementTree as ET
 
-# Manejo de archivos JSON
 class JSONHandler:
     def read_json(self, path):
         with open(path, "r") as f:
@@ -12,7 +11,6 @@ class JSONHandler:
         with open(path, "w") as f:
             json.dump(data, f, indent=4)
 
-# Manejo de archivos XML
 class XMLHandler:
     def _xml_to_dict(self, root):
         return {
@@ -39,7 +37,6 @@ class XMLHandler:
         tree = ET.ElementTree(root)
         tree.write(path, encoding="utf-8", xml_declaration=True)
 
-# Adaptador de formatos
 class FileAdapter:
     def __init__(self, handler, file_type):
         self.handler = handler
@@ -61,7 +58,6 @@ class FileAdapter:
         else:
             raise ValueError("Formato no soportado")
 
-# Datos médicos de un paciente
 paciente_data = {
     "nombre": "Ana Gómez",
     "edad": "45",
@@ -70,12 +66,10 @@ paciente_data = {
     "doctor": "Dr. Martínez"
 }
 
-# Guardar y leer en JSON
 json_adapter = FileAdapter(JSONHandler(), "json")
 json_adapter.write("paciente.json", paciente_data)
 print("Datos en JSON:", json_adapter.read("paciente.json"))
 
-# Guardar y leer en XML
 xml_adapter = FileAdapter(XMLHandler(), "xml")
 xml_adapter.write("paciente.xml", paciente_data)
 print("Datos en XML:", xml_adapter.read("paciente.xml"))

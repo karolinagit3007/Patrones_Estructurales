@@ -14,10 +14,10 @@ class AireAcondicionado:
 
 class Alarma:
     def activar(self):
-        print("🚨 Alarma de emergencia activada")
+        print("Alarma de emergencia activada")
     
     def desactivar(self):
-        print("🚨 Alarma desactivada")
+        print("Alarma desactivada")
 
 class HospitalInteligente:
     def __init__(self):
@@ -26,18 +26,17 @@ class HospitalInteligente:
         self.alarma = Alarma()
 
     def modo_emergencia(self):
-        print("⚠️ Activando MODO EMERGENCIA...")
+        print(" Activando MODO EMERGENCIA...")
         self.luces.encender()
         self.aire.apagar()
         self.alarma.activar()
 
     def modo_normal(self):
-        print("✅ Activando MODO NORMAL...")
+        print(" Activando MODO NORMAL...")
         self.luces.apagar()
         self.aire.encender()
         self.alarma.desactivar()
 
-# Simulación del sistema en un hospital
 hospital = HospitalInteligente()
 
 hospital.modo_normal()
